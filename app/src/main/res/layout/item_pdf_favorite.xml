@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="140dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="5dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardElevation="0dp"
+    app:cardCornerRadius="5dp"
+    app:contentPadding="5dp">
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+<!--        pdf thumbnail, progress bar-->
+        <RelativeLayout
+            android:id="@+id/rlPdf"
+            android:layout_width="100dp"
+            android:layout_height="140dp"
+            android:layout_marginEnd="5dp"
+            android:background="@color/gray02">
+
+            <com.github.barteksc.pdfviewer.PDFView
+                android:id="@+id/pdfView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_toEndOf="@+id/rlPdf"
+            android:layout_marginEnd="5dp"
+            android:layout_toStartOf="@id/btnRemoveFav"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:text="Book Title"/>
+        
+        <ImageButton
+            android:id="@+id/btnRemoveFav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_ok_favorite"
+            android:tint="@color/black"
+            android:background="@android:color/transparent"/>
+        
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTitle"
+            android:layout_toEndOf="@id/rlPdf"
+            android:maxLines="4"
+            android:text="The description of the books"
+            android:ellipsize="end"/>
+
+
+        <TextView
+            android:id="@+id/tvCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:maxLines="1"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:text="Category" />
+
+        <TextView
+            android:id="@+id/tvSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:maxLines="1"
+            android:layout_toEndOf="@id/rlPdf"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:text="00MB" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:maxLines="1"
+            android:layout_toEndOf="@id/tvSize"
+            android:textAlignment="center"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_toStartOf="@id/tvCategory"
+            android:text="dd/MM/yyy" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
